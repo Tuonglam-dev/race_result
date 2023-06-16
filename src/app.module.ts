@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CrawlingDataModule } from './crawling-data/crawling-data.module';
 import { UtilService } from './util/util.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { RaceResultModule } from './race-result/race-result.module';
 // Node env for current environment
 const node_env = process.env.NODE_ENV;
 @Module({
@@ -21,10 +22,11 @@ const node_env = process.env.NODE_ENV;
         return {
           uri: configService.get<string>('MONGODB_URI'),
           dbName: configService.get<string>('MONGODB_NAME'),
-        }
+        };
       },
       inject: [ConfigService],
-  }),
+    }),
+    RaceResultModule,
   ],
   controllers: [AppController],
   providers: [AppService, UtilService],

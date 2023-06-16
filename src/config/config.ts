@@ -1,6 +1,6 @@
-import { ConfigProps } from "src/config/config.interface";
+import { ConfigProps } from 'src/config/config.interface';
 
-export const config = ():ConfigProps => ({
+export const config = (): ConfigProps => ({
   port: parseInt(process.env.PORT, 10) || 8080,
   api: {
     apiUrl: process.env.API_URL,
@@ -8,8 +8,9 @@ export const config = ():ConfigProps => ({
   },
   mongodb: {
     database: {
-      connectionString: process.env.MONGODB_CONNECTION_STRING || 'mongodb://localhost:27017',
-      databaseName: process.env.NODE_ENV || 'local'
-    }
-  }
- });
+      connectionString:
+        process.env.MONGODB_CONNECTION_STRING || 'mongodb://localhost:27017',
+      databaseName: process.env.NODE_ENV || 'local',
+    },
+  },
+});

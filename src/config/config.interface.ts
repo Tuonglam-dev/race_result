@@ -1,18 +1,17 @@
 interface ApiConfigProps {
-  apiUrl: string
-  httpTimeout: number
+  apiUrl: string;
+  httpTimeout: number;
 }
 
 interface MongodbConfigProps {
-  connectionString: string
-  databaseName: string
+  connectionString: string;
+  databaseName: string;
 }
 
-
 export interface ConfigProps {
-  port: number
-  api: ApiConfigProps
+  port: number;
+  api: ApiConfigProps;
   mongodb: {
-    database: MongodbConfigProps
-  }
+    database: MongodbConfigProps;
+  };
 }
